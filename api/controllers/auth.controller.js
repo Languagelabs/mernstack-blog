@@ -20,7 +20,7 @@ export const signup = async (req, res, next) => {
         await newUser.save()
         res.status(200).json('registration successful')
     }catch(error){
-        next(errorHandler(409, 'Data is conflicting'))
+        next(errorHandler(409, 'Data exists, if you are a user sign in'))
     }    
 }
 
