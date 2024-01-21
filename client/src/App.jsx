@@ -8,6 +8,7 @@ import Channels from "./pages/Channels"
 import Search from "./pages/Search"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
+import Footers from "./components/Footer"
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn/>} />
         <Route path="/sign-up" element={<SignUp/>} />
       </Routes>
+      <Footers />
     </BrowserRouter>
   )
 }
