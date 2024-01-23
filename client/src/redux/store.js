@@ -1,11 +1,25 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {configureStore, combineReducers} from '@reduxjs/toolkit';
 import userReducer from '../redux/user/userSlice.js'; 
-import counterReducer from '../redux/counter/counterSlice.js'
+import counterReducer from '../redux/counter/counterSlice.js';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
+const rootReducer = combineReducers({
+    user: userReducer,
+    counter: counterReducer,
+});
+
+const persistConfig = {
+    key: 'root',
+    storage,
+    version: 1,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-    reducer: {
-        user: userReducer, 
-        counter: counterReducer
-    }
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false})
 });
+
+export const persistor = persistStore(store);

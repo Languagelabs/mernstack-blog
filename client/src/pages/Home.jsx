@@ -10,17 +10,13 @@ export default function Home() {
 
    const handleValueIncrease = (e) => { 
     const input = Number(e.target.value);
-    if (isNaN(input)){
-      return
-    }
+     
     dispatch(setIncrement(input));
    };
 
    const handleValueDecrease = (e) => {
     const input = Number(e.target.value);
-    if (isNaN(input)){
-      return
-    }
+     
     dispatch(setDecrement(input));
    }; 
 
@@ -84,7 +80,7 @@ export default function Home() {
           <div className="pr-5">  
             <form onSubmit={handleDecreseBy}>
               <Label value="Decrease by" className="text-xs" />
-              <TextInput type="text" id="minus" value={decrementValue} placeholder={decrementValue} onChange={handleValueDecrease} /> 
+              <TextInput type="number" id="minus" value={decrementValue} placeholder={decrementValue} onChange={handleValueDecrease} /> 
               <Button type="submit" className="mt-4 w-full"> - <span className="text-xs">Decrease</span> - </Button>
             </form>
             <Button type="submit" className="mt-4 w-full" onClick={handleAsyncDecrease} disabled={isDecreaseLoading}> 
@@ -95,7 +91,7 @@ export default function Home() {
           <div className="pl-5">  
             <form onSubmit={handleIncreseBy}> 
               <Label value="Increase by" className="text-xs"  />
-              <TextInput type="text" id="plus" value={incrementValue} placeholder={incrementValue}  onChange={handleValueIncrease} />  
+              <TextInput type="number" id="plus" value={incrementValue} placeholder={incrementValue}  onChange={handleValueIncrease} />  
               <Button type="submit" className="mt-4 w-full"> + <span className="text-xs px-1"> Increase </span> + </Button>
             </form>
             
