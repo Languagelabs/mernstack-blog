@@ -6,7 +6,7 @@ import { RiSearch2Line } from "react-icons/ri";
 export default function Header() {
     const path = useLocation().pathname
     return (
-        <Navbar className='bg-gray-100 w-100'>
+        <Navbar className='bg-gray-100 w-100 fixed left-0 right-0 top-0'>
           <Navbar.Brand as={'div'}>
             <Link to={'/'} className='whitespace-nowrap flex items-center mr-5'>
               <FcBinoculars  className='w-10 h-8 ' />

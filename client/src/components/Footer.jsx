@@ -3,7 +3,7 @@ import { BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 export default function Footers() {
   return (
-    <Footer bgDark className=' mt-20 rounded-none'>
+    <Footer bgDark className=' rounded-none'>
       <div className="w-full">
         <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
           <div>
